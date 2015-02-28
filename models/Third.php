@@ -7,5 +7,8 @@
  */
 
 class Third {
+    function __construct(){
+        include "views/third.html";
+    }
 
 }
