@@ -36,7 +36,7 @@ class ConnectToDB {
     public function connect(){
         try
         {
-            $this->setPdo(new PDO('mysql:host=sql.s22.vdl.pl;dbname=pgorak93_mzk;charset=utf8', 'pgorak93_reader', 'zaq12wsx'));
+            $this->setPdo(new PDO('mysql:host='.DB_HOST.';dbname='.DB_NAME.';charset=utf8', ''.DB_USER.'', ''.DB_PASS.''));
 
         }
         catch(PDOException $e)

@@ -1,4 +1,4 @@
-config/db.php
+app/functions/config/db.php
 # Windows image file caches
 Thumbs.db
 ehthumbs.db

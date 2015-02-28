@@ -22,7 +22,7 @@ class SendToDB {
     public function send($str){
         $obj = new ConnectToDB();
         $connection = $obj->getPdo();
-        $sql_query = 'INSERT INTO nbp (parsedData, date) VALUES (:sqlquery,now());';
+        $sql_query = 'INSERT INTO data (parsedData, date) VALUES (:sqlquery,now());';
         $q = $connection->prepare($sql_query);
         /**
          * $var converts from e.g. 13,54 to 13.54
