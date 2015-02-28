@@ -5,7 +5,7 @@
  * Date: 2015-02-28
  * Time: 13:07
  */
-require_once ('ConnectToDB.php');
+require_once('ConnectToDB.php');
 class SendToDB {
     /**
      * @param $str

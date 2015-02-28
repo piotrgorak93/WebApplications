@@ -5,7 +5,7 @@
  * Date: 2015-02-28
  * Time: 02:41
  */
-require_once 'config/db.php';
+include 'config/db.php';
 class ConnectToDB {
     private $pdo;
 
