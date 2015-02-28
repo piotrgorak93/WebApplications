@@ -6,6 +6,7 @@
  * Date: 2015-02-28
  * Time: 00:53
  */
+require_once ('SendToDB.php');
 class First
 {
 
@@ -13,13 +14,19 @@ class First
     {
         include "views/first.html";
         include "app/functions/simple_html_dom.php";
-        $this->getData();
+        $parsed_data = $this->getData('http://www.nbp.pl/home.aspx?c=/ascx/Zloto_cena.ascx');
+        $this->send_to_db($parsed_data);
 
     }
-    function getData(){
-        $html = file_get_html('http://www.nbp.pl/home.aspx?c=/ascx/Zloto_cena.ascx');
-        $str = $html->save();
 
+    /**
+     * @param $address_to_process
+     * @return string function receives html document from address provided
+     * function receives html document from $address_to_process and retrieves the price of gold
+     */
+    function getData($address_to_process){
+        $html = file_get_html($address_to_process);
+        $str = $html->save();
         $pattern = "<td width=\"80\" class=\"bgt2 right bold\">";
         $pattern_length = strlen($pattern);
         $start_cut = strpos($str, $pattern);
@@ -27,7 +34,10 @@ class First
         $str = substr($str, $pattern_length);
         $stop_cut = strpos($str, "</td>");
         $str = substr($str, 0, $stop_cut);
-        echo $str;
+        return $str;
+    }
+    public function send_to_db($param){
+        new SendToDB($param);
     }
 
 }
