@@ -22,13 +22,15 @@ class SendToDB {
     public function send($str){
         $obj = new ConnectToDB();
         $connection = $obj->getPdo();
-        $sql_query = 'INSERT INTO data (parsedData, date) VALUES (:sqlquery,now());';
+        $sql_query = 'INSERT INTO data (parsedData, dateStamp, date) VALUES (:sqlquery,now(), :date1);';
+        echo date("Y-m-d");
         $q = $connection->prepare($sql_query);
         /**
          * $var converts from e.g. 13,54 to 13.54
          */
         $var = str_replace(',','.',$str);
         $q->bindParam(':sqlquery', $var,PDO::PARAM_STR );
+        $q->bindParam(':date1',date("Y-m-d"),PDO::PARAM_STR);
         $q->execute();
     }
 

@@ -1,20 +1,41 @@
-.visibility {
-    display: block;
-}
-
-
-
-@media screen and (max-width: 980px) {
-    body {
-        background-color: red;
-    }
-    #logo{
+@media (max-width: 355px) {
+    #logo {
         display: none;
     }
-    #visibility:after{
-        content: "New text";
-        text-indent: 0;
-        display: block;
+}
 
+@media (min-width: 356px) {
+    #logo_small {
+        display: none;
+    }
+}
+
+@media (max-width: 766px) {
+    .container {
+        width: 100%;
+        padding: 0;
+    }
+
+    .jumbotron {
+        padding-top: 45px;
+    }
+
+    .navbar {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .active_custom {
+
+    }
+}
+
+@media (min-width: 767px) {
+    .active_custom {
+        box-shadow: black 0px -4px inset;
+
+    }
+
+    .hvr-underline-reveal:before {
+        background: #000000;
     }
 }
