@@ -39,3 +39,6 @@
         background: #000000;
     }
 }
+.downloadedData, .downloadedDate{
+    display: none;
+}
