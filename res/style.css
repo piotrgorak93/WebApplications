@@ -31,7 +31,7 @@
 
 @media (min-width: 767px) {
     .active_custom {
-        box-shadow: black 0px -4px inset;
+        box-shadow: black 0 -4px inset;
 
     }
 
@@ -42,3 +42,11 @@
 .downloadedData, .downloadedDate{
     display: none;
 }
+
+.navbar-default .navbar-nav>.active>a{
+    background-color: #990033;
+}
+
+.navbar-default .navbar-nav>li>a:hover{
+     background-color: #a42bc5;
+ }
