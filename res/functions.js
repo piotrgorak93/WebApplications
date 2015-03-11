@@ -13,10 +13,7 @@ $("#main").click(function () {
         $("#first").hide();
         $("#second").hide();
         $("#third").hide();
-        $("#mainLi").addClass('active_custom').removeClass('hvr-underline-reveal');
-        $("#firstLi").removeClass('active_custom').addClass('hvr-underline-reveal');
-        $("#secondLi").removeClass('active_custom').addClass('hvr-underline-reveal');
-        $("#thirdLi").removeClass('active_custom').addClass('hvr-underline-reveal');
+        mobile("#mainLi");
         autoCollapseAndChangeStyle();
     }
 );
@@ -25,10 +22,7 @@ $("#firstLink").click(function () {
     $("#first").fadeIn();
     $("#second").hide();
     $("#third").hide();
-    $("#mainLi").removeClass('active_custom').addClass('hvr-underline-reveal');
-    $("#firstLi").addClass('active_custom').removeClass('hvr-underline-reveal');
-    $("#secondLi").removeClass('active_custom').addClass('hvr-underline-reveal');
-    $("#thirdLi").removeClass('active_custom').addClass('hvr-underline-reveal');
+    mobile("#firstLi");
     autoCollapseAndChangeStyle();
 
 });
@@ -37,10 +31,7 @@ $("#secondLink").click(function () {
     $("#first").hide();
     $("#second").fadeIn();
     $("#third").hide();
-    $("#mainLi").removeClass('active_custom').addClass('hvr-underline-reveal');
-    $("#firstLi").removeClass('active_custom').addClass('hvr-underline-reveal');
-    $("#secondLi").addClass('active_custom').removeClass('hvr-underline-reveal');
-    $("#thirdLi").removeClass('active_custom').addClass('hvr-underline-reveal');
+    mobile("#secondLi");
     autoCollapseAndChangeStyle();
 
 });
@@ -49,10 +40,7 @@ $("#thirdLink").click(function () {
     $("#first").hide();
     $("#second").hide();
     $("#third").fadeIn();
-    $("#mainLi").removeClass('active_custom').addClass('hvr-underline-reveal');
-    $("#firstLi").removeClass('active_custom').addClass('hvr-underline-reveal');
-    $("#secondLi").removeClass('active_custom').addClass('hvr-underline-reveal');
-    $("#thirdLi").addClass('active_custom').removeClass('hvr-underline-reveal');
+    mobile("#thirdLi");
     autoCollapseAndChangeStyle();
 
 });
@@ -60,6 +48,19 @@ $("#thirdLink").click(function () {
 function autoCollapseAndChangeStyle() {
     if (!$("#button").hasClass("collapsed")) {
         $("#button").click();
+
+    }
+}
+/**
+ *
+ * @param param
+ * function removes redundant classes from siblings of current li element
+ */
+function mobile(param) {
+    if ($(window).width() < 335) {
+        $(param).addClass('active_custom_mobile').removeClass('hvr-underline-reveal')
+            .siblings().removeClass('active_custom_mobile').removeClass('hvr-underline-reveal');
+
 
     }
 }

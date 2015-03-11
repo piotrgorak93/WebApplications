@@ -24,8 +24,8 @@
         padding-left: 15px;
         padding-right: 15px;
     }
-    .active_custom {
-        background-color: gray;
+    .active_custom_mobile {
+        background-color: #E7E7E7;
 
     }
 }
