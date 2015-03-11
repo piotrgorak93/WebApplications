@@ -1,8 +1,9 @@
 // Get context with jQuery - using jQuery's .get() method.
 var ctx = $("#myChart").get(0).getContext("2d");
-// This will get the first returned node in the jQuery collection.
-ctx.canvas.width  = window.innerWidth/2;
-ctx.canvas.height = window.innerHeight/4;
+//size of the canvas
+ctx.canvas.width  = 120*getDays().length;
+ctx.canvas.height = window.innerHeight/2;
+
 function getGoldPrice() {
     var array = [];
     $(".downloadedData").each(function () {

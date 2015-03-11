@@ -2,11 +2,13 @@
  * Created by User_Piotr on 2015-02-27.
  */
 $(document).ready(function () {
-    $("#home").show();
-    $("#first").hide();
-    $("#second").hide();
-    $("#third").hide();
-});
+        $("#home").show();
+        $("#first").hide();
+        $("#second").hide();
+        $("#third").hide();
+        mobile("#mainLi");
+    }
+);
 
 $("#main").click(function () {
         $("#home").fadeIn();
@@ -57,7 +59,9 @@ function autoCollapseAndChangeStyle() {
  * function removes redundant classes from siblings of current li element
  */
 function mobile(param) {
-    if ($(window).width() < 335) {
+    if ($(window).width() >= 768) {
+        $(param).addClass('active_custom').siblings().addClass('hvr-underline-reveal').removeClass('active_custom');
+    } else {
         $(param).addClass('active_custom_mobile').removeClass('hvr-underline-reveal')
             .siblings().removeClass('active_custom_mobile').removeClass('hvr-underline-reveal');
 
