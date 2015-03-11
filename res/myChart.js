@@ -39,7 +39,6 @@ var data = {
     ]
 };
 var options={
-    responsive: true,
     bezierCurve : false
 };
 
