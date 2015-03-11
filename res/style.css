@@ -35,16 +35,12 @@
         box-shadow: black 0 -4px inset;
 
     }
-    .navbar-default .navbar-nav>.active_custom>a{
-        background-color: #990033;
-    }
+
 
     .hvr-underline-reveal:before {
         background: #000000;
     }
-    .navbar-default .navbar-nav>li>a:hover{
-        background-color: #a42bc5;
-    }
+
 }
 .downloadedData, .downloadedDate{
     display: none;

@@ -13,10 +13,10 @@ $("#main").click(function () {
         $("#first").hide();
         $("#second").hide();
         $("#third").hide();
-        $("#mainLi").addClass('active_custom');
-        $("#firstLi").removeClass('active_custom');
-        $("#secondLi").removeClass('active_custom');
-        $("#thirdLi").removeClass('active_custom');
+        $("#mainLi").addClass('active_custom').removeClass('hvr-underline-reveal');
+        $("#firstLi").removeClass('active_custom').addClass('hvr-underline-reveal');
+        $("#secondLi").removeClass('active_custom').addClass('hvr-underline-reveal');
+        $("#thirdLi").removeClass('active_custom').addClass('hvr-underline-reveal');
         autoCollapseAndChangeStyle();
     }
 );
@@ -25,10 +25,10 @@ $("#firstLink").click(function () {
     $("#first").fadeIn();
     $("#second").hide();
     $("#third").hide();
-    $("#mainLi").removeClass('active_custom');
-    $("#firstLi").addClass('active_custom');
-    $("#secondLi").removeClass('active_custom');
-    $("#thirdLi").removeClass('active_custom');
+    $("#mainLi").removeClass('active_custom').addClass('hvr-underline-reveal');
+    $("#firstLi").addClass('active_custom').removeClass('hvr-underline-reveal');
+    $("#secondLi").removeClass('active_custom').addClass('hvr-underline-reveal');
+    $("#thirdLi").removeClass('active_custom').addClass('hvr-underline-reveal');
     autoCollapseAndChangeStyle();
 
 });
@@ -37,10 +37,10 @@ $("#secondLink").click(function () {
     $("#first").hide();
     $("#second").fadeIn();
     $("#third").hide();
-    $("#mainLi").removeClass('active_custom');
-    $("#firstLi").removeClass('active_custom');
-    $("#secondLi").addClass('active_custom');
-    $("#thirdLi").removeClass('active_custom');
+    $("#mainLi").removeClass('active_custom').addClass('hvr-underline-reveal');
+    $("#firstLi").removeClass('active_custom').addClass('hvr-underline-reveal');
+    $("#secondLi").addClass('active_custom').removeClass('hvr-underline-reveal');
+    $("#thirdLi").removeClass('active_custom').addClass('hvr-underline-reveal');
     autoCollapseAndChangeStyle();
 
 });
@@ -49,10 +49,10 @@ $("#thirdLink").click(function () {
     $("#first").hide();
     $("#second").hide();
     $("#third").fadeIn();
-    $("#mainLi").removeClass('active_custom');
-    $("#firstLi").removeClass('active_custom');
-    $("#secondLi").removeClass('active_custom');
-    $("#thirdLi").addClass('active_custom');
+    $("#mainLi").removeClass('active_custom').addClass('hvr-underline-reveal');
+    $("#firstLi").removeClass('active_custom').addClass('hvr-underline-reveal');
+    $("#secondLi").removeClass('active_custom').addClass('hvr-underline-reveal');
+    $("#thirdLi").addClass('active_custom').removeClass('hvr-underline-reveal');
     autoCollapseAndChangeStyle();
 
 });
