@@ -30,9 +30,9 @@ class DownloadDataFromDB
 
     public function createQueryAndRetrieveData()
     {
-        $sql_query = "SELECT parsedData FROM data;";
+        $sql_query = "SELECT parsedData FROM data ORDER BY dateStamp;";
         $statement = $this->getConnection()->query($sql_query);
-        $sql_query2 = "SELECT  date FROM data;";
+        $sql_query2 = "SELECT  date FROM data ORDER BY dateStamp;";
         $statement2 = $this->getConnection()->query($sql_query2);
 
         foreach($statement as $row)
