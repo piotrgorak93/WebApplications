@@ -5,8 +5,22 @@
 
     <!-- Main component for a primary marketing message or call to action -->
     <div class="jumbotron">
-        <h1>Aplikacje webowe trzy</h1>
+        <h1>Generator haseł</h1>
 
-        <p>Na tej stronie znajdują się aplikacje wykonane w technologiach PHP oraz JavaScript/jQuery.</p>
+        <p>Wybierz pożądane opcje i kliknij przycisk Generuj</p>
 
         <p>
+        <section style="width:50%; margin:auto">
+        <form>
+            <input type="checkbox" name="uppercase" value="uppercase">Duże litery
+            <br />
+            <input type="checkbox" name="lowercase" value="lowercase">Małe litery
+            <br />
+            <input type="checkbox" name="special" value="special">Znaki specjalne
+            <br />
+            <input type="checkbox" name="numbers" value="numbers">Cyfry
+            <br />
+            <input type="range" id="slider" name="slider" min="1" max="16" value="8" onchange="printValue('slider','rangeValue1')" style="width:50%">
+            <input id="rangeValue1" type="text" size="2">
+        </form>
+            </section>
