@@ -24,6 +24,7 @@
         padding-left: 15px;
         padding-right: 15px;
     }
+
     .active_custom_mobile {
         background-color: #E7E7E7;
 
@@ -36,13 +37,45 @@
 
     }
 
-
     .hvr-underline-reveal:before {
         background: #000000;
     }
 
 }
-.downloadedData, .downloadedDate{
+
+.downloadedData, .downloadedDate {
     display: none;
+}
+
+label {
+    font-weight: initial;
+    margin-left: 5px;
+}
+
+li > input {
+    vertical-align: -2px;
+}
+
+li {
+    list-style-type: none;
+}
+
+form {
+    margin-left: 0;
+    }
+
+#slider {
+    margin: 7px 7px auto 40px;
+    background-color: #ffffff;
+    width: 50%;
+    border: 1px solid #ccc;
+    text-align: center;
+    float: left;
+}
+input{
+    background-color: white;
+    border: 1px solid gray;
+    text-align: center;
+
 }
 

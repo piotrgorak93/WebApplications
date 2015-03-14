@@ -649,7 +649,7 @@ jQuery.extend({
 		if ( !id ) 
 			id = elem[ expando ] = ++uuid;
 
-		// Only generate the data cache if we're
+		// Only generatePassword the data cache if we're
 		// trying to access or manipulate it
 		if ( name && !jQuery.cache[ id ] )
 			jQuery.cache[ id ] = {};
