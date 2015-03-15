@@ -50,10 +50,12 @@ $("#thirdLink").click(function () {
 
 });
 
+/**
+ * collapse menu in mobile mode after menu item is clicked
+ */
 function autoCollapseAndChangeStyle() {
     if (!$("#button").hasClass("collapsed")) {
         $("#button").click();
-
     }
 }
 /**
@@ -71,6 +73,9 @@ function mobile(param) {
 
     }
 }
+/**
+ * slider generator
+ */
 function showSlider() {
     $(function () {
         $("#slider").slider({
@@ -84,17 +89,25 @@ function showSlider() {
         );
     });
 }
-
+/**
+ * set password field visible
+ */
 function showPassword() {
     $("input").prev("p").show(200);
     $("input:hidden").show(200);
 }
+
+
 function generatePassword() {
 
-
+    console.log(generateTableToDraw());
+    console.log(Math.floor(Math.random() * generateTableToDraw().length) + 1);
+    console.log(isUpperChecked());
+    console.log(isLowerChecked());
+    console.log(isSpecialChecked());
+    console.log(isNumberChecked());
     showPassword();
 }
-
 
 
 function generateLowercase() {
@@ -112,7 +125,7 @@ function generateUppercase() {
     var tableUpper = [];
     var j = 0;
     var i;
-    for (i = 64; i <= 90; i++) {
+    for (i = 65; i <= 90; i++) {
         tableUpper[j] = String.fromCharCode(i);
         j++;
     }
@@ -144,12 +157,47 @@ function generateSpecial() {
 
     return tableSpecial;
 }
-function generateNumbers(){
+function generateNumbers() {
     var tableNumbers = [];
     var i;
-    for (i=0;i<=9;i++){
-        tableNumbers[i]=i;
+    for (i = 0; i <= 9; i++) {
+        tableNumbers[i] = i.toString();
     }
     return tableNumbers;
+}
+
+function isUpperChecked() {
+    return $("#uppercase").is(":checked");
+}
+function isLowerChecked() {
+    return $("#lowercase").is(":checked");
+}
+function isSpecialChecked() {
+    return $("#special").is(":checked");
+}
+function isNumberChecked() {
+    return $("#numbers").is(":checked");
+}
+
+function generateTableToDraw() {
+    var table = [];
+    if (isUpperChecked()) {
+        table = table.concat(generateUppercase());
+    }
+    if (isLowerChecked()) {
+        table = table.concat(generateLowercase());
+    }
+    if (isSpecialChecked()) {
+        table = table.concat(generateSpecial());
+    }
+    if (isNumberChecked()) {
+        table = table.concat(generateNumbers());
+    }
+    return table;
+
+
+}
+function getNumberOfChars() {
+    $("#slider").val();
 }
 
