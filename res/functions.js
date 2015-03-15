@@ -109,10 +109,8 @@ function generatePassword() {
 
     for (var i = 0; i < getNumberOfChars(); i++) {
 
-        generatedPassword = generatedPassword.concat(tab[generateIndexOfSignFromTable()]);
-        if (typeof generatedPassword[i] === 'undefined') {
-            generatedPassword[i] = "0";
-        }
+        generatedPassword = generatedPassword.concat(tab[generateIndexOfSignFromTable(tab)]);
+
     }
     showPassword(generatedPassword.join(""));
 }
@@ -212,7 +210,8 @@ function generateTableToDraw() {
 function getNumberOfChars() {
     return $("#outputText").val();
 }
-function generateIndexOfSignFromTable() {
-    return Math.floor(Math.random() * generateTableToDraw().length) + 1;
+function generateIndexOfSignFromTable(tab) {
+    return Math.floor(Math.random() * tab.length);
+
 }
 
