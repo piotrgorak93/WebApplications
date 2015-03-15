@@ -92,21 +92,29 @@ function showSlider() {
 /**
  * set password field visible
  */
-function showPassword() {
+function showPassword(password) {
     $("input").prev("p").show(200);
     $("input:hidden").show(200);
+    $("#result").val(password);
 }
 
 
 function generatePassword() {
 
-    console.log(generateTableToDraw());
-    console.log(Math.floor(Math.random() * generateTableToDraw().length) + 1);
-    console.log(isUpperChecked());
-    console.log(isLowerChecked());
-    console.log(isSpecialChecked());
-    console.log(isNumberChecked());
-    showPassword();
+    var generatedPassword = [];
+    var tab = generateTableToDraw();
+    if (typeof tab === 'undefined') {
+        return;
+    }
+
+    for (var i = 0; i < getNumberOfChars(); i++) {
+
+        generatedPassword = generatedPassword.concat(tab[generateIndexOfSignFromTable()]);
+        if (typeof generatedPassword[i] === 'undefined') {
+            generatedPassword[i] = "0";
+        }
+    }
+    showPassword(generatedPassword.join(""));
 }
 
 
@@ -193,11 +201,18 @@ function generateTableToDraw() {
     if (isNumberChecked()) {
         table = table.concat(generateNumbers());
     }
+    if (!isUpperChecked() && !isLowerChecked() && !isSpecialChecked() && !isNumberChecked()) {
+        alert("Zaznacz opcje");
+        return;
+    }
     return table;
 
 
 }
 function getNumberOfChars() {
-    $("#slider").val();
+    return $("#outputText").val();
+}
+function generateIndexOfSignFromTable() {
+    return Math.floor(Math.random() * generateTableToDraw().length) + 1;
 }
 
