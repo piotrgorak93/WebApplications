@@ -18,7 +18,6 @@ function drawCanvas(canvas, i) {
     ctx.fillStyle = "#" + getAndParseToHex(i);
     ctx.fillRect(0, 0, ctx.canvas.width, 100);
     writeColor();
-    console.log(canvas + " created");
 }
 
 function getAndParseToHex(i) {
@@ -50,7 +49,6 @@ function addZeroToColor(str) {
 function drawSliders(input, output) {
     for (var i = 1; i <= 3; i++) {
         showSlider(0, 255, 127, input+i, output+i);
-        console.log(input+i, output+i);
     }
 
 }
@@ -64,7 +62,6 @@ function paintApplication() {
         drawCanvas("myCanvas" + i, i);
         for (var j = 0; j < 3; j++)
             drawSliders(input[j], output[j]);
-        //  console.log(input[i-1], output[i-1]);
     }
     paintBackground("white");
 }

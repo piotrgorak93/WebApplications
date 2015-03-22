@@ -80,8 +80,10 @@ function showSlider(min, max, val, input, output) {
                 value: val,
                 slide: function (event, ui) {
                     $(output).val(ui.value);
-                    if (max == 255) {
-                        drawCanvas();
+                    if (max === 255) {
+                        var index = input.substr(input.length-1,input.length);
+                        var canvas = "myCanvas"+index;
+                        drawCanvas(canvas,index);
                     }
                 }
             }
