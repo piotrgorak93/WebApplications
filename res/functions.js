@@ -7,7 +7,7 @@ $(document).ready(function () {
         $("#second").hide();
         $("#third").hide();
         mobile("#mainLi");
-        showSlider();
+        showSlider(1, 25, 13, "#slider", "#outputText");
 
 
     }
@@ -64,29 +64,28 @@ function autoCollapseAndChangeStyle() {
  * function removes redundant classes from siblings of current li element
  */
 function mobile(param) {
-    if ($(document).width() >= 768) {
-        $(param).addClass('active_custom').removeClass('hvr-underline-reveal').siblings().addClass('hvr-underline-reveal').removeClass('active_custom');
-    } else {
-        $(param).addClass('active_custom_mobile').removeClass('hvr-underline-reveal')
-            .siblings().removeClass('active_custom_mobile').siblings().removeClass('hvr-underline-reveal');
-
-
+    $(param).addClass('active_custom').siblings().removeClass('active_custom');
+    if ($(document).width() < 767) {
+        $(param).removeClass('hvr-underline-reveal').siblings().removeClass('hvr-underline-reveal');
     }
 }
 /**
  * slider generator
  */
-function showSlider() {
+function showSlider(min, max, val, input, output) {
     $(function () {
-        $("#slider").slider({
-                min: 1,
-                max: 25,
-                value: 13,
+        $(input).slider({
+                min: min,
+                max: max,
+                value: val,
                 slide: function (event, ui) {
-                    $("#outputText").val(ui.value);
+                    $(output).val(ui.value);
+                    if (max == 255) {
+                        drawCanvas();
+                    }
                 }
             }
-        );
+        ).draggable();
     });
 }
 /**

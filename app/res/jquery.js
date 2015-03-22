@@ -1399,7 +1399,7 @@ jQuery.extend({
 			password: "'password'==a.type",
 			submit: "'submit'==a.type",
 			image: "'image'==a.type",
-			reset: "'reset'==a.type",
+			reset: "'paintApplication'==a.type",
 			button: '"button"==a.type||jQuery.nodeName(a,"button")',
 			input: "/input|select|textarea|button/i.test(a.nodeName)",
 

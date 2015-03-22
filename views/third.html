@@ -1,9 +1,35 @@
-</div><div class="container" id="third" >
+</div>
+<div class="container" id="third">
 
     <!-- Main component for a primary marketing message or call to action -->
     <div class="jumbotron">
         <h1>Aplikacje webowe cztery</h1>
 
         <p>Na tej stronie znajdują się aplikacje wykonane w technologiach PHP oraz JavaScript/jQuery.</p>
+        <section>
+            <form>
+                <section class="row">
+                    <div class="col-md-8 col-sm-12">
+                        <div id="sliderRed" style="margin-bottom: 10px"></div>
+                        <div id="sliderGreen" style="margin-bottom: 10px"></div>
+                        <div id="sliderBlue" style="margin-bottom: 10px"></div>
+                    </div>
+                    <input type="text" class="hide" id="outputRed" size="2" maxlength="2" disabled value="127">
+                    <input type="text" class="hide" id="outputBlue" size="2" maxlength="2" disabled value="127">
+                    <input type="text" class="hide" id="outputGreen" size="2" maxlength="2" disabled value="127">
 
-        <p>
+                    <section class="col-md-4 col-sm-12">
+                        <canvas id="myCanvas" width="200" height="100"></canvas>
+                        <div class="col-md-8 col-sm-12" id="pickedColor"></div>
+
+                    </section>
+                    <input class="btn btn-default" type="button" value="Submit" onclick="paintApplication()" >
+
+                    <a class="btn btn-default" href="javascript:void(0)" id="resetButton" role="button" onmousedown="paintApplication()" onmouseup="resetButton()">Resetuj
+                        ustawienia</a>
+
+
+                </section>
+            </form>
+
+            <p>

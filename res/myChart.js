@@ -1,8 +1,8 @@
 // Get context with jQuery - using jQuery's .get() method.
 var ctx = $("#myChart").get(0).getContext("2d");
 //size of the canvas
-ctx.canvas.width  = 120*getDays().length;
-ctx.canvas.height = window.innerHeight/2;
+ctx.canvas.width = 120 * getDays().length;
+ctx.canvas.height = window.innerHeight / 2;
 
 function getGoldPrice() {
     var array = [];
@@ -13,7 +13,7 @@ function getGoldPrice() {
     return array
 
 }
-function getDays(){
+function getDays() {
     var array = [];
     $(".downloadedDate").each(function () {
         array.push($(this).text());
@@ -39,9 +39,9 @@ var data = {
         }
     ]
 };
-var options={
-    bezierCurve : false
+var options = {
+    bezierCurve: false
 };
 
-new Chart(ctx).Line(data,options);
+new Chart(ctx).Line(data, options);
 
