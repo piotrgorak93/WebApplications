@@ -3,42 +3,42 @@
  */
 $(document).ready(function () {
         paintApplication();
-
-
     }
 );
 
-function drawCanvas() {
+function drawCanvas(canvas, i) {
     var width = $(document).width();
-    var ctx = document.getElementById("myCanvas").getContext("2d");
+    var ctx = document.getElementById(canvas).getContext("2d");
     if (width < 767) {
         ctx.canvas.width = width - 30;
     }
     else {
         ctx.canvas.width = 200;
     }
-    ctx.fillStyle = "#" + getAndParseToHex();
+    ctx.fillStyle = "#" + getAndParseToHex(i);
     ctx.fillRect(0, 0, ctx.canvas.width, 100);
     writeColor();
+    console.log(canvas + " created");
 }
 
-function getAndParseToHex() {
-    var str = $("#outputRed").val();
+function getAndParseToHex(i) {
+    var str = $("#outputRed" + i).val();
     str = Number(str).toString(16);
     str = addZeroToColor(str);
-    var str2 = $("#outputGreen").val();
+    var str2 = $("#outputGreen" + i).val();
     str2 = Number(str2).toString(16);
     str2 = addZeroToColor(str2);
-    var str3 = $("#outputBlue").val();
+    var str3 = $("#outputBlue" + i).val();
     str3 = Number(str3).toString(16);
     str3 = addZeroToColor(str3);
-    console.log(str + str2 + str3);
     return str + str2 + str3;
 
 }
 
 function writeColor() {
-    $("#pickedColor").text("Wybrany kolor to #" + getAndParseToHex());
+    for (var i = 1; i <= 3; i++)
+        $("#pickedColor" + i).text("Wybrany kolor to #" + getAndParseToHex(i));
+
 }
 function addZeroToColor(str) {
     if (str.length === 1) {
@@ -46,23 +46,36 @@ function addZeroToColor(str) {
     }
     return str;
 }
-function drawSliders() {
-    showSlider(0, 255, 127, "#sliderRed", "#outputRed");
-    showSlider(0, 255, 127, "#sliderGreen", "#outputGreen");
-    showSlider(0, 255, 127, "#sliderBlue", "#outputBlue");
-}
-function paintApplication() {
 
-    drawSliders();
+function drawSliders(input, output) {
+    for (var i = 1; i <= 3; i++) {
+        showSlider(0, 255, 127, input+i, output+i);
+        console.log(input+i, output+i);
+    }
+
+}
+
+function paintApplication() {
+    var input = ["#sliderRed", "#sliderGreen", "#sliderBlue"];
+    var output = ["#outputRed", "#outputGreen", "#outputBlue"];
     resetOutputs();
-    drawCanvas();
+
+    for (var i = 1; i <= 3; i++) {
+        drawCanvas("myCanvas" + i, i);
+        for (var j = 0; j < 3; j++)
+            drawSliders(input[j], output[j]);
+        //  console.log(input[i-1], output[i-1]);
+    }
+    paintBackground("white");
 }
-function resetOutputs(){
-    $("#outputRed").val(127);
-    $("#outputGreen").val(127);
-    $("#outputBlue").val(127);
+function resetOutputs(i) {
+    $("#outputRed" + i).val(127);
+    $("#outputGreen" + i).val(127);
+    $("#outputBlue" + i).val(127);
 }
-function resetButton(){
-    $("#resetButton").removeClass("btn-default").removeClass("btn");
-    $("#resetButton").addClass("btn-default").addClass("btn");
+function paintBackground(color) {
+    if (color === undefined) {
+        $("body").css("background-color", "#" + getAndParseToHex());
+    } else $("body").css("background-color", color);
+
 }

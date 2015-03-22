@@ -3,33 +3,75 @@
 
     <!-- Main component for a primary marketing message or call to action -->
     <div class="jumbotron">
-        <h1>Aplikacje webowe cztery</h1>
+        <h1>Color picker</h1>
 
-        <p>Na tej stronie znajdują się aplikacje wykonane w technologiach PHP oraz JavaScript/jQuery.</p>
+        <p>Użyj suwaków, by wygenerować kolor</p>
         <section>
             <form>
                 <section class="row">
                     <div class="col-md-8 col-sm-12">
-                        <div id="sliderRed" style="margin-bottom: 10px"></div>
-                        <div id="sliderGreen" style="margin-bottom: 10px"></div>
-                        <div id="sliderBlue" style="margin-bottom: 10px"></div>
+                        <div id="sliderRed1" style="margin-bottom: 10px"></div>
+                        <div id="sliderGreen1" style="margin-bottom: 10px"></div>
+                        <div id="sliderBlue1" style="margin-bottom: 10px"></div>
                     </div>
-                    <input type="text" class="hide" id="outputRed" size="2" maxlength="2" disabled value="127">
-                    <input type="text" class="hide" id="outputBlue" size="2" maxlength="2" disabled value="127">
-                    <input type="text" class="hide" id="outputGreen" size="2" maxlength="2" disabled value="127">
+                    <input type="text" class="hide" id="outputRed1" size="2" maxlength="2" disabled value="127">
+                    <input type="text" class="hide" id="outputBlue1" size="2" maxlength="2" disabled value="127">
+                    <input type="text" class="hide" id="outputGreen1" size="2" maxlength="2" disabled value="127">
 
                     <section class="col-md-4 col-sm-12">
-                        <canvas id="myCanvas" width="200" height="100"></canvas>
-                        <div class="col-md-8 col-sm-12" id="pickedColor"></div>
-
+                        <canvas id="myCanvas1" width="200" height="100"></canvas>
+                        <div class="col-md-8 col-sm-12" id="pickedColor1"></div>
                     </section>
-                    <input class="btn btn-default" type="button" value="Submit" onclick="paintApplication()" >
 
-                    <a class="btn btn-default" href="javascript:void(0)" id="resetButton" role="button" onmousedown="paintApplication()" onmouseup="resetButton()">Resetuj
+                    <a style="margin-left:15px; float:left" class="btn btn-default" href="javascript:void(0)" id="resetButton"
+                       role="button" onmousedown="paintApplication(1)">Resetuj
                         ustawienia</a>
+                    <a class="btn btn-default" href="javascript:void(0)" id="applyButton"
+                       role="button" onmousedown="paintBackground()">Ustaw kolor tła</a>
+                </section>
 
+                <section class="row">
+                    <div class="col-md-8 col-sm-12">
+                        <div id="sliderRed2" style="margin-bottom: 10px"></div>
+                        <div id="sliderGreen2" style="margin-bottom: 10px"></div>
+                        <div id="sliderBlue2" style="margin-bottom: 10px"></div>
+                    </div>
+                    <input type="text" class="hide" id="outputRed2" size="2" maxlength="2" disabled value="127">
+                    <input type="text" class="hide" id="outputBlue2" size="2" maxlength="2" disabled value="127">
+                    <input type="text" class="hide" id="outputGreen2" size="2" maxlength="2" disabled value="127">
 
+                    <section class="col-md-4 col-sm-12">
+                        <canvas id="myCanvas2" width="200" height="100"></canvas>
+                        <div class="col-md-8 col-sm-12" id="pickedColor2"></div>
+                    </section>
+
+                    <a style="margin-left:15px; float:left" class="btn btn-default" href="javascript:void(0)" id="resetButton2"
+                       role="button" onmousedown="paintApplication(2)">Resetuj
+                        ustawienia</a>
+                    <a class="btn btn-default" href="javascript:void(0)" id="applyButton2"
+                       role="button" onmousedown="paintBackground()">Ustaw kolor tła</a>
+                </section>
+
+                <section class="row">
+                    <div class="col-md-8 col-sm-12">
+                        <div id="sliderRed3" style="margin-bottom: 10px"></div>
+                        <div id="sliderGreen3" style="margin-bottom: 10px"></div>
+                        <div id="sliderBlue3" style="margin-bottom: 10px"></div>
+                    </div>
+                    <input type="text" class="hide" id="outputRed3" size="2" maxlength="2" disabled value="127">
+                    <input type="text" class="hide" id="outputBlue3" size="2" maxlength="2" disabled value="127">
+                    <input type="text" class="hide" id="outputGreen3" size="2" maxlength="2" disabled value="127">
+
+                    <section class="col-md-4 col-sm-12">
+                        <canvas id="myCanvas3" width="200" height="100"></canvas>
+                        <div class="col-md-8 col-sm-12" id="pickedColor3"></div>
+                    </section>
+
+                    <a style="margin-left:15px; float:left" class="btn btn-default" href="javascript:void(0)" id="resetButton3"
+                       role="button" onmousedown="paintApplication(3)">Resetuj
+                        ustawienia</a>
+                    <a class="btn btn-default" href="javascript:void(0)" id="applyButton3"
+                       role="button" onmousedown="paintBackground()">Ustaw kolor tła</a>
                 </section>
             </form>
-
             <p>
