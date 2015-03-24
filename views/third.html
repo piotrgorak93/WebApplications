@@ -2,7 +2,7 @@
 <div class="container" id="third">
 
     <!-- Main component for a primary marketing message or call to action -->
-    <div class="jumbotron">
+    <div class="jumbotron" id="jumbotron">
         <h1>Color picker</h1>
 
         <p>Użyj suwaków, by wygenerować kolor</p>
@@ -27,7 +27,7 @@
                        role="button" onmousedown="paintApplication(1)">Resetuj
                         ustawienia</a>
                     <a class="btn btn-default" href="javascript:void(0)" id="applyButton"
-                       role="button" onmousedown="paintBackground()">Ustaw kolor tła</a>
+                       role="button" onmousedown="paintElement(0)">Ustaw kolor tła</a>
                 </section>
 
                 <section class="row">
@@ -49,7 +49,7 @@
                        role="button" onmousedown="paintApplication(2)">Resetuj
                         ustawienia</a>
                     <a class="btn btn-default" href="javascript:void(0)" id="applyButton2"
-                       role="button" onmousedown="paintBackground()">Ustaw kolor tła</a>
+                       role="button" onmousedown="paintElement(1)">Ustaw kolor nagłówka</a>
                 </section>
 
                 <section class="row">
@@ -71,7 +71,7 @@
                        role="button" onmousedown="paintApplication(3)">Resetuj
                         ustawienia</a>
                     <a class="btn btn-default" href="javascript:void(0)" id="applyButton3"
-                       role="button" onmousedown="paintBackground()">Ustaw kolor tła</a>
+                       role="button" onmousedown="paintElement(2)">Ustaw kolor jumbotrona</a>
                 </section>
                 <section class="row">
                     <div class="col-md-8 col-sm-12">
@@ -92,7 +92,7 @@
                        role="button" onmousedown="paintApplication(4)">Resetuj
                         ustawienia</a>
                     <a class="btn btn-default" href="javascript:void(0)" id="applyButton4"
-                       role="button" onmousedown="paintBackground()">Ustaw kolor tła</a>
+                       role="button" onmousedown="paintElement(3)">Ustaw kolor czcionki</a>
                 </section>
             </form>
             <p>

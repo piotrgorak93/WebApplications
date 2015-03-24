@@ -64,10 +64,12 @@ function resetOutputs(i) {
     $("#outputBlue" + i).val(127);
 }
 
-function paintBackground(color) {
-    if (color === undefined) {
-        $("body").css("background-color", "#" + getAndParseToHex());
-    } else $("body").css("background-color", color);
+function paintElement(element) {
+    var arrayOfElements = ["body", "nav", "#jumbotron", "font"]
+    if (element == 3) {
+        $("body").css("color", "#" + getAndParseToHex(element + 1)+" !important");
+    } else $(arrayOfElements[element]).css("background-color", "#" + getAndParseToHex(element + 1));
+
 
 }
 function getInputs() {
