@@ -2,24 +2,18 @@
  * Created by User_Piotr on 2015-02-27.
  */
 $(document).ready(function () {
-        $("#home").show();
+
         $("#first").hide();
         $("#second").hide();
         $("#third").hide();
-        mobile("#mainLi");
+        $("#first").removeClass('hvr-underline-reveal').siblings().removeClass('hvr-underline-reveal');
         showSlider(1, 25, 13, "#slider", "#outputText");
-
-
-    }
-);
-
-$("#main").click(function () {
-        $("#home").fadeIn();
-        $("#first").hide();
-        $("#second").hide();
-        $("#third").hide();
-        mobile("#mainLi");
-        autoCollapseAndChangeStyle();
+        $(".btn").mouseup(function(){
+            $(this).blur();
+        });
+        $("#button").click(function(){
+            $(this).blur();
+        });
     }
 );
 $("#firstLink").click(function () {
@@ -214,6 +208,13 @@ function getNumberOfChars() {
 }
 function generateIndexOfSignFromTable(tab) {
     return Math.floor(Math.random() * tab.length);
+
+}
+function showMe(show){
+    var linki = ["#first","#second","#third"];
+    $("#home").hide();
+    $(linki[show-1]).show();
+
 
 }
 

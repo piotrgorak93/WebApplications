@@ -10,10 +10,14 @@ function drawCanvas(canvas, idNumber) {
     var width = $(document).width();
     var ctx = document.getElementById(canvas).getContext("2d");
     if (width < 767) {
-        ctx.canvas.width = width - 30;
+        ctx.canvas.width = $(document).width() - 30;
+        console.log(ctx.canvas.width);
+
     }
     else {
         ctx.canvas.width = 200;
+
+
     }
     ctx.fillStyle = "#" + getAndParseToHex(idNumber);
     ctx.fillRect(0, 0, ctx.canvas.width, 100);
@@ -35,7 +39,7 @@ function getAndParseToHex(i) {
 }
 
 function writeColor() {
-    for (var i = 1; i <= 3; i++)
+    for (var i = 1; i <= 4; i++)
         $("#pickedColor" + i).text("Wybrany kolor to #" + getAndParseToHex(i));
 
 }
@@ -55,6 +59,20 @@ function paintApplication(param) {
     }
     else {
         paintOnePart(param);
+        switch (param) {
+            case 1:
+                resetBody();
+                break;
+            case 2:
+                resetNav();
+                break;
+            case 3:
+                resetJumbotron();
+                break;
+            case 4:
+                resetLinks();
+                break;
+        }
     }
 
 }
@@ -67,8 +85,10 @@ function resetOutputs(i) {
 function paintElement(element) {
     var arrayOfElements = ["body", "nav", "#jumbotron", "font"]
     if (element == 3) {
-        $("body").css("color", "#" + getAndParseToHex(element + 1)+" !important");
-    } else $(arrayOfElements[element]).css("background-color", "#" + getAndParseToHex(element + 1));
+        $("body").css("color", "#" + getAndParseToHex(element + 1));
+        $("a").css("color", "#" + getAndParseToHex(element + 1));
+    }
+    else $(arrayOfElements[element]).css("background-color", "#" + getAndParseToHex(element + 1));
 
 
 }
@@ -85,5 +105,30 @@ function paintOnePart(index) {
     }
     resetOutputs(index);
     drawCanvas("myCanvas" + index.toString(), index);
+
+}
+function resetPage() {
+    resetBody();
+    resetNav();
+    resetLinks();
+    resetJumbotron();
+    for (var i = 1; i <= 4; i++) {
+        paintApplication(i);
+    }
+}
+function resetBody() {
+    $("body").css({"background-color": "#fff", "color": "#333"});
+
+}
+function resetNav() {
+    $("nav").css("background-color", "#f8f8f8");
+
+}
+function resetLinks() {
+    $("a").css("color", "#333");
+
+}
+function resetJumbotron() {
+    $("#jumbotron").css("background-color", "#eee");
 
 }

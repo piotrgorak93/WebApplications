@@ -25,12 +25,17 @@
         padding-right: 15px;
     }
 
-    .active_custom{
+    .active_custom {
         background-color: #E7E7E7;
 
     }
-    #pickedColor{
+
+    #pickedColor {
         text-align: center;
+    }
+
+    .hvr-underline-reveal {
+
     }
 }
 
@@ -43,8 +48,9 @@
     .hvr-underline-reveal:before {
         background: #000000;
     }
-    #pickedColor{
-        padding-left:21px;
+
+    #pickedColor {
+        padding-left: 21px;
     }
 
 }
@@ -90,4 +96,29 @@ input [id*='output'] {
     display: none;
 }
 
+.row {
+    margin-bottom: 15px;
+
+}
+
+.resetButton {
+    margin: 0 15px 0 15px;
+    float: left;
+}
+
+div[id*='slider'] {
+    margin-bottom: 10px;
+}
+
+div[id*='sliderRed'] {
+    margin-top: 18px;
+}
+
+p + .row {
+    margin-left: 0;
+}
+
+form + a {
+    margin-top: 18px;
+}
 
