@@ -6,7 +6,7 @@ $(document).ready(function () {
     }
 );
 
-function drawCanvas(canvas, i) {
+function drawCanvas(canvas, idNumber) {
     var width = $(document).width();
     var ctx = document.getElementById(canvas).getContext("2d");
     if (width < 767) {
@@ -15,7 +15,7 @@ function drawCanvas(canvas, i) {
     else {
         ctx.canvas.width = 200;
     }
-    ctx.fillStyle = "#" + getAndParseToHex(i);
+    ctx.fillStyle = "#" + getAndParseToHex(idNumber);
     ctx.fillRect(0, 0, ctx.canvas.width, 100);
     writeColor();
 }
@@ -46,33 +46,42 @@ function addZeroToColor(str) {
     return str;
 }
 
-function drawSliders(input, output) {
-    for (var i = 1; i <= 3; i++) {
-        showSlider(0, 255, 127, input+i, output+i);
+
+function paintApplication(param) {
+    if (param === undefined) {
+        for (var index = 1; index <= 3; index++) {
+            paintOnePart(index);
+        }
+    }
+    else {
+        paintOnePart(param);
     }
 
-}
-
-function paintApplication() {
-    var input = ["#sliderRed", "#sliderGreen", "#sliderBlue"];
-    var output = ["#outputRed", "#outputGreen", "#outputBlue"];
-    resetOutputs();
-
-    for (var i = 1; i <= 3; i++) {
-        drawCanvas("myCanvas" + i, i);
-        for (var j = 0; j < 3; j++)
-            drawSliders(input[j], output[j]);
-    }
-    paintBackground("white");
 }
 function resetOutputs(i) {
     $("#outputRed" + i).val(127);
     $("#outputGreen" + i).val(127);
     $("#outputBlue" + i).val(127);
 }
+
 function paintBackground(color) {
     if (color === undefined) {
         $("body").css("background-color", "#" + getAndParseToHex());
     } else $("body").css("background-color", color);
+
+}
+function getInputs() {
+    return ["#sliderRed", "#sliderGreen", "#sliderBlue"];
+
+}
+function getOutputs() {
+    return ["#outputRed", "#outputGreen", "#outputBlue"];
+}
+function paintOnePart(index) {
+    for (var i = 0; i < 3; i++) {
+        showSlider(0, 255, 127, getInputs()[i] + index.toString(), getOutputs()[i] + index.toString());
+    }
+    resetOutputs(index);
+    drawCanvas("myCanvas" + index.toString(), index);
 
 }
