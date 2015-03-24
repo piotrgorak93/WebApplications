@@ -49,7 +49,7 @@ function addZeroToColor(str) {
 
 function paintApplication(param) {
     if (param === undefined) {
-        for (var index = 1; index <= 3; index++) {
+        for (var index = 1; index <= 4; index++) {
             paintOnePart(index);
         }
     }
@@ -78,7 +78,7 @@ function getOutputs() {
     return ["#outputRed", "#outputGreen", "#outputBlue"];
 }
 function paintOnePart(index) {
-    for (var i = 0; i < 3; i++) {
+    for (var i = 0; i < 4; i++) {
         showSlider(0, 255, 127, getInputs()[i] + index.toString(), getOutputs()[i] + index.toString());
     }
     resetOutputs(index);
