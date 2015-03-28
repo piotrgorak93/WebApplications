@@ -11,8 +11,6 @@ function drawCanvas(canvas, idNumber) {
     var ctx = document.getElementById(canvas).getContext("2d");
     if (width < 767) {
         ctx.canvas.width = $(document).width() - 30;
-        console.log(ctx.canvas.width);
-
     }
     else {
         ctx.canvas.width = 200;
@@ -121,12 +119,14 @@ function resetBody() {
 
 }
 function resetNav() {
-    $("nav").css("background-color", "#f8f8f8");
+    $("nav").css({"background-color": "#f8f8f8", "color": "#777"});
 
 }
 function resetLinks() {
-    $("a").css("color", "#333");
-
+    $("body").css("color", "#000");
+    $("a:not('.btn-primary')").css("color", "#000");
+    $("ul li a").css("color", "#777");
+    $(".navbar-brand").css("color", "#777");
 }
 function resetJumbotron() {
     $("#jumbotron").css("background-color", "#eee");

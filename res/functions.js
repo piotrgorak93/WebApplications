@@ -211,9 +211,11 @@ function generateIndexOfSignFromTable(tab) {
 
 }
 function showMe(show){
-    var linki = ["#first","#second","#third"];
+    var links = ["#first","#second","#third"];
     $("#home").hide();
-    $(linki[show-1]).show();
+    $(links[show-1]).show();
+    $(links[show-1]+"Li").addClass('active_custom');
+
 
 
 }
