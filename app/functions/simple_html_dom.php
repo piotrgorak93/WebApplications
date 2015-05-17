@@ -240,7 +240,7 @@ class simple_html_dom_node
     }
 
     // returns the parent of node
-    // If a node is passed in, it will reset the parent of the current node to that one.
+    // If a node is passed in, it will paintApplication the parent of the current node to that one.
     function parent($parent=null)
     {
         // I am SURE that this doesn't work properly.
@@ -1463,13 +1463,13 @@ class simple_html_dom
         }
         else
         {
-            // reset parent
+            // paintApplication parent
             if (!isset($this->self_closing_tags[strtolower($node->tag)])) $this->parent = $node;
         }
         $this->char = (++$this->pos<$this->size) ? $this->doc[$this->pos] : null; // next
 
         // If it's a BR tag, we need to set it's text to the default text.
-        // This way when we see it in plaintext, we can generate formatting that the user wants.
+        // This way when we see it in plaintext, we can generatePassword formatting that the user wants.
         // since a br tag never has sub nodes, this works well.
         if ($node->tag == "br")
         {
@@ -1628,7 +1628,7 @@ class simple_html_dom
             $this->doc = substr_replace($this->doc, $key, $matches[$i][$idx][1], strlen($matches[$i][$idx][0]));
         }
 
-        // reset the length of content
+        // paintApplication the length of content
         $this->size = strlen($this->doc);
         if ($this->size>0)
         {
